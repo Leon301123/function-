@@ -4,12 +4,12 @@ using namespace std;
 string caesarEncrypt(string text, int shift) {
     string encrypted = "";
     for (int i = 0; i < text.length(); i++) {
-        char c = text[i];
+        char c = text[i]; //存入變數C中
         if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
             char base = (c >= 'a') ? 'a' : 'A';
             encrypted += (c - base + shift) % 26 + base;
         } else {
-            encrypted += c;
+            encrypted += c; //判斷是否為英文字母
         }
     }
     return encrypted;
